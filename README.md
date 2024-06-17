@@ -18,7 +18,6 @@ Next to the BrukerExp folders, general study related files are handled as follow
 | File   | subject                    | **Yes** |
 | File   | ResultState                | No      |
 
-
 ---
 
 
