@@ -50,4 +50,7 @@ git push origin main
 
 #### Github Actions
 
-well
+Currently we have to actions:
+
+1. Automatically bump version
+2. Automatically generate (a very rudimentary) change log
