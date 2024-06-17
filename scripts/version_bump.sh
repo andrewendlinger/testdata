@@ -3,30 +3,26 @@
 # Ensure the script exits on the first error encountered
 set -e
 
-# Check if CHANGELOG.md exists; create it if it doesn't
-if [ ! -f CHANGELOG.md ]; then
-    touch CHANGELOG.md
+# Check if version.txt exists; create it if it doesn't
+if [ ! -f version.txt ]; then
+    echo "0.0.0" > version.txt
 fi
 
-# Fetch all tags and latest changes
-git fetch --tags
-git pull origin main
+# Now proceed with the rest of the version bumping logic
+current_version=$(<version.txt)
+IFS='.' read -r -a version_parts <<< "$current_version"
+major=${version_parts[0]}
+minor=${version_parts[1]}
+patch=${version_parts[2]}
+new_version="$major.$minor.$((patch + 1))"
+echo "$new_version" > version.txt
+echo "Bumped version to $new_version"
 
-# Fetch latest tag and date
-latest_tag=$(git describe --tags --abbrev=0)
-latest_tag_date=$(git log -1 --format=%ai $latest_tag | cut -d ' ' -f 1)
-formatted_date=$(date -d $latest_tag_date +"%dth of %B %Y")
+# Create a tag for this version
+git tag "v$new_version"
+git push origin "v$new_version"
 
-# Generate changelog header
-echo "## $latest_tag ($formatted_date)" > CHANGELOG.md
-
-# Append commits to changelog
-git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" $latest_tag..HEAD >> CHANGELOG.md
-
-# Add a new line at the end of the file
-echo "" >> CHANGELOG.md
-
-# Commit changelog
-git add CHANGELOG.md
-git commit -m "Updated changelog from $latest_tag to HEAD"
+# Commit version bump
+git add version.txt
+git commit -m "Bump version to $new_version"
 git push origin HEAD:main
