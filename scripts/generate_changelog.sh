@@ -17,15 +17,27 @@ latest_tag=$(git describe --tags --abbrev=0)
 latest_tag_date=$(git log -1 --format=%ai $latest_tag | cut -d ' ' -f 1)
 formatted_date=$(date -d $latest_tag_date +"%dth of %B %Y")
 
-# Generate changelog header
-echo "---" > CHANGELOG.md
-echo "## $latest_tag ($formatted_date)" > CHANGELOG.md
+# Create a temporary file for the new changelog entry
+temp_file=$(mktemp)
 
-# Append commits to changelog
-git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" $latest_tag..HEAD >> CHANGELOG.md
+# Generate changelog header in the temporary file
+echo "---" > $temp_file
+echo "## $latest_tag ($formatted_date)" >> $temp_file
 
-# Add a new line at the end of the file
-echo "" >> CHANGELOG.md
+# Append commits to the temporary file
+git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" $latest_tag..HEAD >> $temp_file
+
+# Add a new line at the end of the temporary file
+echo "" >> $temp_file
+
+# Concatenate the temporary file and the existing CHANGELOG.md
+cat $temp_file CHANGELOG.md > CHANGELOG.md.new
+
+# Replace the old CHANGELOG.md with the new one
+mv CHANGELOG.md.new CHANGELOG.md
+
+# Remove the temporary file
+rm $temp_file
 
 # Commit changelog
 git add CHANGELOG.md
