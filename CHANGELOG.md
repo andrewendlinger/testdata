@@ -1,3 +1,0 @@
-* [02dd0c0](https://github.com/andrewendlinger/testdata/commit/02dd0c0cf6afe3d514f44ed84060dc65be6f54a2) - Merge branch 'main' of https://github.com/andrewendlinger/testdata
-* [780e50b](https://github.com/andrewendlinger/testdata/commit/780e50bbcefda1e8cef4b6eb1e3da66b0610ee11) - again
-* [a05ed7b](https://github.com/andrewendlinger/testdata/commit/a05ed7b4703060bf6840ecdf08d6a64c930ffd3e) - Bump version to 0.0.5

@@ -39,7 +39,7 @@ jobs:
 
         # Commit changelog
         git add CHANGELOG.md
-        git commit -m "Updated changelog from $latest_tag to HEAD"
+        git commit -m "Updated changelog to $latest_tag"
         git push origin HEAD:main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
