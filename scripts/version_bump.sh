@@ -56,16 +56,3 @@ git push origin "v$new_version"
 git add version.txt
 git commit -m "Bump version to $new_version"
 git push origin HEAD:main
-
-
-
-Run bash ./scripts/version_bump.sh
-  bash ./scripts/version_bump.sh
-  shell: /usr/bin/bash -e {0}
-  env:
-    GH_TOKEN: ***
-Bumped version to 0.2.8
-fatal: ambiguous argument 'v0.2.7..HEAD': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]'
-Error: Process completed with exit code 128.
