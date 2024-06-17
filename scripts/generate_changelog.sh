@@ -22,6 +22,7 @@ temp_file=$(mktemp)
 
 # Generate changelog header in the temporary file
 echo "---" > $temp_file
+echo "" > $temp_file
 echo "## $latest_tag ($formatted_date)" >> $temp_file
 
 # Append commits to the temporary file
