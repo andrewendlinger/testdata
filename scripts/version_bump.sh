@@ -18,6 +18,32 @@ new_version="$major.$minor.$((patch + 1))"
 echo "$new_version" > version.txt
 echo "Bumped version to $new_version"
 
+
+# Create a temporary file for the new changelog entry
+temp_file=$(mktemp)
+
+# Generate changelog header in the temporary file
+echo "---" > $temp_file
+echo "" > $temp_file
+echo "## $current_version (date)" >> $temp_file
+
+# Loop through all commits since the last push and append to the temporary file
+echo "Changes since last push to main:" >> "$temp_file"
+git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" "$current_version"..HEAD >> "$temp_file"
+
+# Add a new line at the end of the temporary file
+echo "" >> $temp_file
+
+# Concatenate the temporary file and the existing CHANGELOG.md
+cat $temp_file CHANGELOG.md > CHANGELOG.md.new
+
+# Replace the old CHANGELOG.md with the new one
+mv CHANGELOG.md.new CHANGELOG.md
+
+# Remove the temporary file
+rm $temp_file
+
+
 # Create a tag for this version
 git tag "v$new_version"
 git push origin "v$new_version"
