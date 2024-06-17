@@ -1,9 +1,13 @@
 # Test Data for the `hypermri` package
 
 
-### Open Questions
+## How to add files:
 
-1. Do we need the following to be included?:
+There exists one folder for each sequence to be tested. Inside the `bruker` directory,
+add a new folder named after the sequence, in here you can put the BrukerExp folders.
+
+Next to the BrukerExp folders, general study related files are handled as follows:
+
 
 |  Type  |          Name              |  Keep?  |
 |--------|----------------------------|---------|
