@@ -14,6 +14,7 @@ git pull origin main
 
 # Fetch latest tag and date
 latest_tag=$(git describe --tags --abbrev=0)
+last_push_commit=$(git rev-parse origin/main)
 latest_tag_date=$(git log -1 --format=%ai $latest_tag | cut -d ' ' -f 1)
 formatted_date=$(date -d $latest_tag_date +"%dth of %B %Y")
 
