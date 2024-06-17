@@ -13,18 +13,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config --local credential.helper store  # Store credentials temporarily
+
       - name: Generate Changelog
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
         run: |
           # Check if CHANGELOG.md exists; create it if it doesn't
-          if [ ! -f version.txt ]; then
+          if [ ! -f CHANGELOG.md ]; then
               touch CHANGELOG.md
           fi
 
+          # grab latest tag and generate change log
           latest_tag=$(git describe --tags --abbrev=0)
           git log --pretty=format:"- %s" $latest_tag..HEAD > CHANGELOG.md
 
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          # commit changelog
           git add CHANGELOG.md
-          git commit -m "Update changelog"
-          git push
+          git commit -m "Updated change log to $latest_tag..HEAD"
+          git push origin HEAD:main
