@@ -1,0 +1,2 @@
+* [0af972f](https://github.com/andrewendlinger/testdata/commit/0af972f3f8e765e1165c0467804a9e4834b96ef9) - Working GH actions for ChangeLog and Version Bump
+* [a7f8340](https://github.com/andrewendlinger/testdata/commit/a7f8340249c465f137baec6e4673e837b35489b4) - Updated changelog from v0.0.5 to HEAD
