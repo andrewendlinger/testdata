@@ -1,7 +1,21 @@
 # Test Data for the `hypermri` package
 
 
-Steps done to create this repo:
+
+### Open Questions
+
+1. Do we need the following to be included (for now: No)?:
+    - folder AdjResults
+    - folder Mapshim
+    - file AdjStatePerStudy
+    - file ScanProgram.scanProgram
+    - file subject
+
+
+---
+
+
+#### Steps done to create this repo
 
 1. Init git lfs
 
