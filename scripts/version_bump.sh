@@ -33,6 +33,7 @@ echo "## $current_version (date)" >> $temp_file
 
 # Loop through all commits since the last push and append to the temporary file
 echo "Changes since last push to main:" >> "$temp_file"
+echo git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" "v$current_version..HEAD"
 git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" "v$current_version..HEAD" >> "$temp_file"
 
 # Add a new line at the end of the temporary file
