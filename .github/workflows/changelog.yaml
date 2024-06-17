@@ -15,6 +15,11 @@ jobs:
 
       - name: Generate Changelog
         run: |
+          # Check if CHANGELOG.md exists; create it if it doesn't
+          if [ ! -f version.txt ]; then
+              touch CHANGELOG.md
+          fi
+
           latest_tag=$(git describe --tags --abbrev=0)
           git log --pretty=format:"- %s" $latest_tag..HEAD > CHANGELOG.md
 

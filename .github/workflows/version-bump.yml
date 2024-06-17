@@ -15,6 +15,12 @@ jobs:
 
       - name: Bump version
         run: |
+          # Check if version.txt exists; create it if it doesn't
+          if [ ! -f version.txt ]; then
+              echo "0.0.0" > version.txt
+          fi
+
+          # Now proceed with the rest of the version bumping logic
           current_version=$(<version.txt)
           IFS='.' read -r -a version_parts <<< "$current_version"
           major=${version_parts[0]}
@@ -33,3 +39,4 @@ jobs:
           git add version.txt
           git commit -m "Bump version to $new_version"
           git push
+
