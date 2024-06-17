@@ -1,0 +1,19 @@
+##TITLE=Parameter List, ParaVision 7.0.0
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=nmrsu
+$$ 2023-06-14 17:09:44.516 +0200  nmrsu@CZC046BHLY
+$$ /opt/PV-7.0.0/data/nmrsu/20230614_150114_WEB1_01026_3D_Kidney_pH_1_1/18/pdata/1/methreco
+$$ process /opt/PV-7.0.0/prog/mod/acq_out
+##$PVM_FwsRecoMode=FWS_DEFAULT
+##$PVM_FwsKernelSize=15
+##$PVM_FwsGaussBroadening=4
+##$PVM_FwsSnr=5
+##$PVM_FwsSigLevel=5
+##$PVM_FwsImages=1
+##$PVM_GradientLinearityCorrection=No
+$$ @vis= PVM_FwsRecoMode PVM_FwsImages Fws_RecoParameters MethodRecoGroup
+$$ @vis= StandardMethodRecoGroup
+##END=
+$$ File finished by PARX at 2023-06-14 17:09:44.516 +0200

@@ -1,0 +1,13 @@
+##TITLE=Parameter List, ParaVision 7.0.0
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=nmrsu
+$$ 2023-06-14 17:09:44.467 +0200  nmrsu@CZC046BHLY
+$$ /opt/PV-7.0.0/data/nmrsu/20230614_150114_WEB1_01026_3D_Kidney_pH_1_1/18/pdata/1/procs
+$$ process /opt/PV-7.0.0/prog/bin/parxserver
+##$OFFSET=166.543705204089
+##$SF=300.221494044029
+##$YMAX_p=5928
+##$YMIN_p=1
+##END=

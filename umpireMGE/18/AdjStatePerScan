@@ -1,0 +1,26 @@
+##TITLE=Parameter List, ParaVision 7.0.0
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=nmrsu
+$$ 2023-06-14 17:05:21.152 +0200  nmrsu@CZC046BHLY
+$$ /opt/PV-7.0.0/data/nmrsu/20230614_150114_WEB1_01026_3D_Kidney_pH_1_1/18/AdjStatePerScan
+$$ process /opt/PV-7.0.0/prog/mod/pipe
+##$AdjScanStateCompleted=Yes
+##$AdjScanStateAdjName=( 2, 128 )
+<SHIM_Scan> <RCVR_Standard>
+##$AdjScanStateCategory=( 2 )
+SHIM RCVR
+##$AdjScanStateTime=( 2 )
+<2023-06-14T17:05:04,893+0200> <2023-06-14T17:05:05,042+0200>
+##$AdjScanStateExpno=( 2 )
+18 18
+##$AdjScanStateState=( 2 )
+adj_successful adj_successful
+##$AdjScanStateResultId=( 2, 65 )
+<2.16.756.5.5.100.8323328.47552.1686755104.15> 
+<2.16.756.5.5.100.8323328.47552.1686755104.16>
+##$AdjScanStateMethod=( 2, 128 )
+<Bruker:AdjShim> <Bruker:RARE>
+##END=
+$$ File finished by PARX at 2023-06-14 17:05:21.152 +0200

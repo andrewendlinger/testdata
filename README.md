@@ -1,15 +1,18 @@
 # Test Data for the `hypermri` package
 
 
-
 ### Open Questions
 
-1. Do we need the following to be included (for now: No)?:
-    - folder AdjResults
-    - folder Mapshim
-    - file AdjStatePerStudy
-    - file ScanProgram.scanProgram
-    - file subject
+1. Do we need the following to be included?:
+
+|  Type  |          Name              |  Keep?  |
+|--------|----------------------------|---------|
+| Folder | AdjResults                 | No      |
+| Folder | Mapshim                    | No      |
+| File   | AdjStatePerStudy           | No      |
+| File   | ScanProgram.scanProgram    | No      |
+| File   | subject                    | **Yes** |
+| File   | ResultState                | No      |
 
 
 ---
