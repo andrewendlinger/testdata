@@ -1,3 +1,6 @@
+
+## v0.2.6 (17th of June 2024)
+- [6b87bf4](https://github.com/andrewendlinger/testdata/commit/6b87bf46bf1fbe38d28a4bf092368d41e1de2c77) Bump version to 0.2.6
 ---
 ## v0.2.5 (17th of June 2024)
 - [da91cd2](https://github.com/andrewendlinger/testdata/commit/da91cd2a590de96344315d91a344b32417857f38) Bump version to 0.2.5
