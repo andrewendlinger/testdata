@@ -1,0 +1,25 @@
+name: Generate Changelog
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate Changelog
+        run: |
+          latest_tag=$(git describe --tags --abbrev=0)
+          git log --pretty=format:"- %s" $latest_tag..HEAD > CHANGELOG.md
+
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CHANGELOG.md
+          git commit -m "Update changelog"
+          git push
