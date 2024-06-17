@@ -31,7 +31,7 @@ jobs:
 
           # grab latest tag and generate change log
           latest_tag=$(git describe --tags --abbrev=0)
-          git log --pretty=format:"* [%h](%b)" $latest_tag..HEAD > CHANGELOG.md
+          git log --pretty=format:"* [%h](https://github.com/andrewendlinger/testdata/commit/%H) - %s" $latest_tag..HEAD > CHANGELOG.md
 
           # commit changelog
           git add CHANGELOG.md
