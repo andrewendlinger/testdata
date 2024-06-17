@@ -46,3 +46,7 @@ git add -A
 git commit -m "Configure Git LFS to track fid and 2dseq files"
 git push origin main
 ```
+
+
+#### Github Actions
+
