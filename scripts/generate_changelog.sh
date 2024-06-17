@@ -25,8 +25,9 @@ echo "---" > $temp_file
 echo "" > $temp_file
 echo "## $latest_tag ($formatted_date)" >> $temp_file
 
-# Append commits to the temporary file
-git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" $latest_tag..HEAD >> $temp_file
+# Loop through all commits since the last push and append to the temporary file
+echo "## Changes since last push to $branch:" >> "$temp_file"
+git log --pretty=format:"- [%h](https://github.com/andrewendlinger/testdata/commit/%H) %s" "$last_push_commit"..HEAD >> "$temp_file"
 
 # Add a new line at the end of the temporary file
 echo "" >> $temp_file
